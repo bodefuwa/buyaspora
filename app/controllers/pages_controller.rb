@@ -13,4 +13,10 @@ class PagesController < ApplicationController
 
   def privacy
   end
+
+  def faqs
+  end
+
+  def help
+  end
 end

@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
-  get 'pages/terms'
-  get 'pages/privacy'
-  get 'pages/faqs'
-  get 'pages/help'
+  resources :sub_cultures
+  resources :cultures
+  resources :sub_categories
+  resources :categories
+  resources :category_types
+  # get => 'pages/home'
+  get 'about'   => 'pages/about'
+  get 'contact' => 'pages/contact'
+  get 'terms'   => 'pages/terms'
+  get 'privacy' => 'pages/privacy'
+  get 'faqs'    => 'pages/faqs'
+  get 'help'    => 'pages/help'
 
   resources :business_details
   resources :businesses
-  root 'businesses#index'
+  root 'pages#home'
 end

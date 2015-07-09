@@ -74,6 +74,45 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+
+  .marketing {
+    height: 400px;
+    width: 1100px;
+    background-color: $brown;
+    color: $white;
+    font-weight: bold;
+    .marketing-half {
+      width: 550px;
+      background-color: $blue;
+    }
+  }
+}
+
+div {
+    .marketing {
+    height: 400px;
+    width: 100% !important;
+    background-color: $brown;
+    color: $white;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .marketing-left {
+    height: 400px;
+    width: 50% !important;
+    background-color: $blue;
+    color: $white;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .marketing-right {
+    height: 400px;
+    width: 50% !important;
+    background-color: $purple;
+    color: $white;
+    font-weight: bold;
+    font-size: 2em;
+  }
 }
 
 /* header */
@@ -87,12 +126,12 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: $olive;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: $olive;
+    border-radius: 15px 15px 5px 5px;
+  }
 }
 
 .navbar {
@@ -105,6 +144,15 @@ p {
        background-color: $green;
      }
    }
+}
+
+
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* footer */

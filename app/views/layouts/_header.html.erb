@@ -1,15 +1,42 @@
 <header class="navbar navbar-fixed-top">
   <div class="container">
-    <%= link_to "BUYASPORA - Ethnic Marketplace", '#', id: "logo" %>
+    <%= link_to "BUYASPORA - Ethnic Marketplace", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Businesses",   '#' %></li>
-        <li><%= link_to "Cultures", '#' %></li>
-        <li><%= link_to "Featured",   '#' %></li>
-        <li><%= link_to "Explore",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in or Sign up", '#' %></li>
+      <ul class="nav navbar-nav navbar-right"  id="nav-menu">
+      <% CategoryType.all.each do |category_type| %>
+        <% if category_type.categories.blank? %>
+          <li><%= link_to category_type.name, category_type %></li>
+          <% else %>  
+            <li class="dropdown"><a href="#" class=" dropdown-toggle" type="button" id="headermenu" data-toggle="dropdown" aria-expanded="true"><%= category_type.name %><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu" aria-lagelledby="dropdownMenuServices">
+              <% category_type.categories.each do |category| %>
+                <li role="presentation"><%= link_to category.name, category, role: "menuitem", tabindex: "-1" %></li>
+              <% end %>
+              </ul>
+            </li>  
+            <% end %>  
+        <% end %>
+        
+        <% Culture.all.each do |culture| %>
+          <% if culture.sub_cultures.blank? %>
+            <li><%= link_to culture.name, culture %></li>
+          <% else %>
+            <li class="dropdown"><a href="#" class=" dropdown-toggle" type="button" id="headermenu" data-toggle="dropdown" aria-expanded="true"><%= culture.name %><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu" aria-lagelledby="dropdownMenuServices">
+              <% culture.sub_cultures.each do |sub_culture| %>
+                <li role="presentation"><%= link_to sub_culture.name, sub_culture, role: "menuitem", tabindex: "-1" %></li>
+              <% end %>
+              </ul>
+            </li>  
+          <% end %>
+        <% end %>
+        <li><% link_to "Home", root_path %></li>
+        <li><% link_to "Businesses", businesses_path %></li>
+        <li><% link_to "Cultures", '#' %></li>
+        <li><% link_to "Featured",   '#' %></li>
+        <li><% link_to "Explore",   '#' %></li>
+        <li><% link_to "Help", help_path %></li>
+        <li><% link_to "Log in or Sign up", '#' %></li>
       </ul>
     </nav>
   </div>

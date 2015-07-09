@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Culture:
+  = @sub_culture.culture
+
+= link_to 'Edit', edit_sub_culture_path(@sub_culture)
+\|
+= link_to 'Back', sub_cultures_path

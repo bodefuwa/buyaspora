@@ -1,0 +1,21 @@
+%h1 Listing sub_cultures
+
+%table
+  %thead
+    %tr
+      %th Culture
+      %th
+      %th
+      %th
+
+  %tbody
+    - @sub_cultures.each do |sub_culture|
+      %tr
+        %td= sub_culture.culture
+        %td= link_to 'Show', sub_culture
+        %td= link_to 'Edit', edit_sub_culture_path(sub_culture)
+        %td= link_to 'Destroy', sub_culture, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Sub culture', new_sub_culture_path

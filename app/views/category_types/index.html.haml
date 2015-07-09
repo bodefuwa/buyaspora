@@ -1,0 +1,21 @@
+%h1 Listing category_types
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @category_types.each do |category_type|
+      %tr
+        %td= category_type.name
+        %td= link_to 'Show', category_type
+        %td= link_to 'Edit', edit_category_type_path(category_type)
+        %td= link_to 'Destroy', category_type, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Category type', new_category_type_path

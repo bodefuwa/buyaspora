@@ -1,0 +1,13 @@
+= form_for @culture do |f|
+  - if @culture.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@culture.errors.count, "error")} prohibited this culture from being saved:"
+      %ul
+        - @culture.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'

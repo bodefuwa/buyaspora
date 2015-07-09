@@ -30,7 +30,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 section {
@@ -56,14 +56,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  //font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  //font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -72,8 +72,8 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+  //font-size: 1.1em;
+  //line-height: 1.7em;
 
   .marketing {
     height: 400px;
@@ -135,6 +135,7 @@ div {
 }
 
 .navbar {
+   background-color: $white;
    li, a {
      color: $olive;
      font-weight: bold;

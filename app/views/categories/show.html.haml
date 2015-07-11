@@ -5,7 +5,7 @@
   = @category.name
 %p
   %b Category type:
-  = @category.category_type
+  = @category.category_type.name
 
 = link_to 'Edit', edit_category_path(@category)
 \|

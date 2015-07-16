@@ -4,14 +4,27 @@
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
+/* Color Combination */
+  $green:        #408000;
+  $purple:       #400080;
+  $lightpurple:  #800080;
+  $olive:        #808000;
+  $brown:        #804000;
+  $blue:         #004080;
+  $darkblue:     #000080;
+  $maroon:       #800040;
+  $white:        #fff;
+
 /* Padding below the footer and lighter body text */
 
-body {
+html, body {
   padding-bottom: 40px;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  min-width: 1140px;
   color: #5a5a5a;
 }
-
-
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -42,14 +55,52 @@ body {
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
-/* Carousel base class */
-.carousel {
+/* jumbotron base class */
+
+.jumbotron {
+  background-color: $olive !important;
+  color: #fff !important;
+  text-align: center;
+  background-color: transparent;
+  margin: 0 -100px;
+
   height: 500px;
   margin-bottom: 60px;
-}
+
 /* Since positioning the image, we need to help out the caption */
-.carousel-caption {
+  .carousel-caption {
+    z-index: 10;
+  }
+  .btn {
+    background-color: $blue;
+    border: 0;
+    color: $white;
+    &:hover {
+     background-color: $darkblue;
+    }
+  }
+}
+
+.submarketing {
+  background-color: $purple !important;
+  color: #fff !important;
+  text-align: center;
+  background-color: transparent;
+  margin: 0 -100px;
   z-index: 10;
+
+  height: 500px;
+  margin-bottom: 60px;
+
+/* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    z-index: 10;
+  }
+}
+
+.row {
+  padding-top: 50px;
+
 }
 
 /* Declare heights because of positioning of img element */
@@ -139,4 +190,36 @@ body {
   .featurette-heading {
     margin-top: 120px;
   }
+}
+
+.f-green {
+  background-color: $green;
+}
+
+.f-purple {
+  background-color: $purple;
+}
+
+.f-lightpurple {
+  background-color: $lightpurple;
+}
+
+.f-olive {
+  background-color: $olive;
+}
+
+.f-brown {
+  background-color: $brown;
+}
+
+.f-blue {
+  background-color: $blue;
+}
+
+.f-darkblue {
+  background-color: $darkblue;
+}
+
+.f-maroon {
+  background-color: $maroon;
 }
